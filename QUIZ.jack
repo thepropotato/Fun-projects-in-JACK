@@ -1,0 +1,130 @@
+class Main{
+    function boolean compareTo(String p, String q){
+        var boolean isCompare;
+        var Array array,arr;
+        var int j;
+        var int i;
+        if (~(p.length() = q.length())) {
+          return false;
+        }
+        let j = p.length();
+        let array = Array.new(j);
+        let arr = Array.new(j);
+        while(i < j){
+          let array[i] = p.charAt(i);
+          let arr[i] = q.charAt(i);
+          let i = i + 1;
+        }
+        let i = 0;
+        while(i < p.length()){
+          if(~(arr[i] = array[i])) {
+            return false;
+          }
+          let i = i + 1;
+        }
+        return true;
+    }
+    function void main(){
+      var String name, uname, upass, lpass, lname,A1,A2,A3,UI2,UI3,UI1; 
+      var int score;
+      do Output.printString("To start the Quiz please register");
+      do Output.println();
+      let name = Keyboard.readLine("Hello! Enter your name: ");
+      let uname = Keyboard.readLine("Enter the username : ");
+      if(uname.length()<4){
+          do Output.printString("Invalid Username; Enter a username with the length greater than 4; do from starting");
+          do Sys.halt();
+      }
+      do Output.println();
+      let upass = Keyboard.readLine("Enter the Password : ");
+      if(upass.length()<8){
+          do Output.printString("Invalid Password; Enter a password with the length greater than 8; do from starting");
+          do Sys.halt();
+      }
+      do Output.println();
+      do Output.printString("                   You are Registered Successfully");
+      do Sys.wait(5000);
+      do Screen.clearScreen();
+      do Output.moveCursor(0,0);
+      do Output.println();
+      do Output.printString("                       Ready for Login:");
+      do Output.println();
+      let lname = Keyboard.readLine("Enter the Username : ");
+      do Output.println();
+      let lpass = Keyboard.readLine("Enter the Password : ");
+      if(Main.compareTo(uname,lname) & Main.compareTo(upass,lpass)){
+          do Output.println();
+          do Output.printString("Logged-in Successfully");
+          do Screen.clearScreen();
+          do Output.moveCursor(0,0);
+          do Output.printString("                     !!Welcome to the Quiz!!");
+          do Output.println();
+          do Output.printString("HELLO!!  ");
+          do Output.printString(name);
+          do Output.println();
+          do Output.printString("LETS START THE QUIZ!!");
+          do Output.println();
+          do Output.println();
+          do Output.println();
+          do Output.printString("Question 1: If you want to thank one person for teaching EOC-2,");
+          do Output.println();
+          do Output.printString("            WHO IS IT !!!?");
+          let A1 = "SREELAKSHMI MAM";
+          do Output.println();
+          let UI1 = Keyboard.readLine("Enter the Answer: ");
+          let score = 0;
+          if(Main.compareTo(A1,UI1)){
+            let score = score + 1;
+          }
+          do Output.println();
+          do Output.printString("Question 2: State the reason : ");
+          do Output.println();
+          do Output.printString("            Why you attend almost every class of EOC-2 !!!?");
+          let A2 = "SREELAKSHMI MAM";
+          do Output.println();
+          let UI2 = Keyboard.readLine("Enter the Answer: ");
+          if(Main.compareTo(A2,UI2)){
+            let score = score + 1;
+          }
+          do Output.println();
+          do Output.printString("Question 3: If you are NIVIN PAULY from 'PREMAM',");
+          do Output.println();
+          do Output.printString("           WHO IS SAI PALLAVI !!!?");
+          let A3 = "SREELAKSHMI MAM";
+          do Output.println();
+          let UI3 = Keyboard.readLine("Enter the Answer: ");
+          
+          if(Main.compareTo(A3,UI3)){
+            let score = score + 1;
+          }
+          do Output.println();
+          do Output.printString("                        !!Successfully Completed!!");
+          do Output.println();
+          do Output.printString("Your score is: ");
+          do Output.printInt(score);
+          if(score=0){
+          do Output.println();
+          do Output.printString("Prepare well!");
+          }
+          if(score=1){
+            do Output.println();
+            do Output.printString("Better luck next time");
+          }
+          if(score=2){
+            do Output.println();
+            do Output.printString("Well tried");
+          }
+          if(score=3){
+            do Output.println();
+            do Output.printString("Congratulations! keep it up!");
+          }
+          do Output.println();
+          do Output.printString("                           !Thank you!");
+      }
+      else{
+          do Output.println();
+          do Output.printString("Invalid credentials");
+      }
+      return;
+    }
+  }

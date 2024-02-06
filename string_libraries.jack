@@ -1,0 +1,94 @@
+class Main{
+    //Here first lets see the strcmp() means finding the string length:
+    //below is the function for strcmp():
+    function int compare(String S_1, String S_2){
+    var int l,m,i,p;
+    let i = 2;
+    let l = Main.length(S_1);
+    let m = Main.length(S_2);
+
+    if(~(l=m)){
+     let p = 0;
+    }
+    if(l=m){
+    while(i<(l+2)){
+     if(S_1[i]=S_2[i]){
+      let p = 1;
+     }
+     else{
+     let p = 0;
+     }
+     let i = i+1;
+     }
+    }
+    return p;
+    }
+	
+    //Here first lets see the strlen() means finding the string length:
+    //below is the function for strlen():
+     function int length(String string){
+        return (Memory.peek(string));
+     }
+    //Here first lets see the strappend() means finding the string length:
+    //below is the function for strappend():
+     function String appendCharacter(String characters,char d) {
+        var int length,i,j;
+        var String S;
+        var Array arr;
+        let i = 0;
+        let j = 2;
+        let length = Main.length(characters);
+        let arr = Array.new(length);
+        let S = String.new((length+1));
+        while(i<length){
+         let arr[i] = characters[i+2];
+         let i = i + 1;
+        }
+        while(j<(length+2)){  
+         let S[j] = arr[j-2];
+         let j = j + 1;
+        }
+        let S[length+2] = d;
+        do Output.println();
+        do Output.printString("The new length after appending is:  ");
+        do Output.printInt(length+1);
+        return S;
+    }
+	
+	
+     function void main(){ 
+     var String a,b,c;
+     var int l,j,k;
+     var char t;
+     let j = 2;
+     do Output.printString("Enter the First String  ");
+     let a = Keyboard.readLine(":  ");
+     do Output.println();
+     do Output.printString("Enter the Second String  ");
+     let b = Keyboard.readLine(":  ");
+     do Output.println();
+     let k = Main.length(a);
+     do Output.printString("The length of First String is:   ");
+     do Output.printInt(k);
+     let l = Main.compare(a,b);
+     if(l=0){
+      do Output.println();
+      do Output.printString("Strings are compared and not equal");
+     }
+     if(l=1){
+     do Output.println();
+     do Output.printString("Strings are compared and equal");
+     }
+     do Output.println();
+     do Output.printString("Enter a alphabet to append to First string : ");
+     let t = Keyboard.readChar();
+     let c = Main.appendCharacter(a,t);
+     do Output.println();
+     do Output.printString("The string after appending is: ");
+     while(j<(k+3)){
+      do Output.printChar(c[j]);
+       let j = j+1;
+     } 
+     return;
+     }
+}
